@@ -1,0 +1,120 @@
+add_newline = false
+
+format = """$username$directory$git_branch$package$java$nodejs$python$dart$docker_context$kubernetes$cmd_duration
+$character"""
+
+# ----------------------
+# Usuario
+# ----------------------
+[username]
+format = "[$user]($style) "
+style_user = "bold fg:#22b455"
+show_always = true
+
+# ----------------------
+# Directorio
+# ----------------------
+[directory]
+style = "bold fg:#80ce87"
+truncation_length = 3
+truncate_to_repo = true
+
+# Path substitutions for cleaner display
+[directory.substitutions]
+"Documentos" = "󰈙 "
+"Descargas" = " "
+"Música" = " "
+"Imágenes" = " "
+"Escritorio" = "󰀾 "
+"Vídeos" = "󰕧 "
+"Public" = "󰐕 "
+"Templates" = "󰏗 "
+
+# ----------------------
+# Git (solo rama)
+# ----------------------
+[git_branch]
+symbol = " "
+style = "bold fg:#22b455"
+
+[git_status]
+disabled = true
+
+# ----------------------
+# Package (version)
+# ----------------------
+[package]
+symbol = "󰏗 "
+style = "bold yellow"
+
+# ----------------------
+# Java
+# ----------------------
+[java]
+symbol = " "
+style = "bold fg:#B00602"
+format = "via [$symbol$version]($style) "
+
+# ----------------------
+# Node.js (Angular)
+# ----------------------
+[nodejs]
+symbol = " "
+style = "bold fg:#80ce87"
+detect_files = ["package.json", "angular.json"]
+format = "[$symbol$version]($style) "
+
+# ----------------------
+# Python
+# ----------------------
+[python]
+symbol = " "
+style = "bold fg:#d2b202"
+format = "[$symbol$version]($style) "
+python_binary = ["./venv/bin/python", "python3", "python"]
+
+# ----------------------
+# Dart / Flutter
+# ----------------------
+[dart]
+symbol = " "
+style = "bold cyan"
+format = "[$symbol$version]($style) "
+
+# ----------------------
+# Docker
+# ----------------------
+[docker_context]
+symbol = "🐳 "
+style = "bold blue"
+only_with_files = true
+detect_files = ["Dockerfile", "docker-compose.yml"]
+
+# ----------------------
+# Kubernetes
+# ----------------------
+[kubernetes]
+symbol = "⎈ "
+style = "bold magenta"
+disabled = false
+
+# ----------------------
+# Prompt
+# ----------------------
+[character]
+success_symbol = "[❯](bold fg:#22b455)"
+error_symbol = "[✗](bold fg:#B00602)"
+
+# ----------------------
+# Limpieza total
+# ----------------------
+[cmd_duration]
+format = "[$duration]($style) "
+style = "fg:#d2b202"
+disabled = false
+
+[memory_usage]
+disabled = true
+
+[time]
+disabled = true
