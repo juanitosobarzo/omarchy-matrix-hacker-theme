@@ -1,0 +1,10 @@
+/* panel */
+@define-color border-color #22b455;
+@define-color background-color rgba(10,10,10,0.75);
+
+/* texto e icono */
+@define-color label #ffffff;
+@define-color image #ffffff;
+
+/* barra base */
+@define-color progress #22b455;
